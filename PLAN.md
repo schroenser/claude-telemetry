@@ -166,7 +166,7 @@ scrape_configs:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
     ports:
-      - "9090:9090"
+      - "9091:9090"
     restart: unless-stopped
     depends_on:
       - collector
@@ -190,8 +190,8 @@ Also expose port `8889` on the collector service:
 docker compose up collector prometheus
 ```
 
-1. Open `http://localhost:9090/targets` — the `claude-collector` target should be `UP`.
-2. Run a `claude` session, then query `http://localhost:9090/graph` for `claude_code_token_usage_total` (or browse metrics with autocomplete).
+1. Open `http://localhost:9091/targets` — the `claude-collector` target should be `UP`.
+2. Run a `claude` session, then query `http://localhost:9091/graph` for `claude_code_token_usage_total` (or browse metrics with autocomplete).
 
 **Pass criteria:** At least one `claude_code_*` metric visible in Prometheus with non-zero values.
 
@@ -449,8 +449,8 @@ docker compose up
 
 ## Completion checklist
 
-- [ ] Step 1 — Collector receiving data from Claude Code
-- [ ] Step 2 — Metrics visible in Prometheus
+- [x] Step 1 — Collector receiving data from Claude Code
+- [x] Step 2 — Metrics visible in Prometheus
 - [ ] Step 3 — Grafana showing live metrics
 - [ ] Step 4 — Log events queryable in Loki
 - [ ] Step 5 — Traces viewable in Tempo (beta)
