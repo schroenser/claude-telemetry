@@ -242,7 +242,7 @@ volumes:
 docker compose up
 ```
 
-1. Open `http://localhost:3000` and log in (`admin` / `admin`).
+1. Open `http://localhost:4000` and log in (`admin` / `admin`).
 2. Go to **Connections → Data sources** — Prometheus should appear and the "Test" button should succeed.
 3. Go to **Explore**, select Prometheus, and query `claude_code_token_usage_total`.
 
@@ -451,6 +451,6 @@ docker compose up
 
 - [x] Step 1 — Collector receiving data from Claude Code
 - [x] Step 2 — Metrics visible in Prometheus
-- [ ] Step 3 — Grafana showing live metrics
+- [x] Step 3 — Grafana showing live metrics
 - [ ] Step 4 — Log events queryable in Loki
 - [ ] Step 5 — Traces viewable in Tempo (beta)

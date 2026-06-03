@@ -21,5 +21,20 @@ services:
     depends_on:
       - collector
 
+  grafana:
+    image: grafana/grafana:latest
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "4000:3000"
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
 volumes:
   prometheus_data:
+  grafana_data:
