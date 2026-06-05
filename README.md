@@ -162,7 +162,7 @@ docker compose down -v
 ## Repository layout
 
 ```
-docker-compose.yml
+compose.yml
 otel/
   collector.yaml               # OTel Collector pipeline config
 prometheus/
@@ -198,4 +198,4 @@ curl -s http://localhost:8889/metrics | head
 ```
 
 **Port conflicts**
-Default host ports used by this stack: `4000`, `4317`, `4318`, `3100`, `3200`, `8889`, `9091`. Adjust the host-side port mappings in `docker-compose.yml` if any are already in use.
+Default host ports used by this stack: `4000`, `4317`, `4318`, `3100`, `3200`, `8889`, `9091`. Adjust the host-side port mappings in `compose.yml` if any are already in use.
