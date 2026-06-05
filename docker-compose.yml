@@ -21,6 +21,16 @@ services:
     depends_on:
       - collector
 
+  loki:
+    image: grafana/loki:latest
+    command: -config.file=/etc/loki/loki.yaml
+    volumes:
+      - ./loki/loki.yaml:/etc/loki/loki.yaml:ro
+      - loki_data:/loki
+    ports:
+      - "3100:3100"
+    restart: unless-stopped
+
   grafana:
     image: grafana/grafana:latest
     environment:
@@ -38,3 +48,4 @@ services:
 volumes:
   prometheus_data:
   grafana_data:
+  loki_data:
