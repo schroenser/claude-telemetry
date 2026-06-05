@@ -31,6 +31,16 @@ services:
       - "3100:3100"
     restart: unless-stopped
 
+  tempo:
+    image: grafana/tempo:latest
+    command: ["-config.file=/etc/tempo/tempo.yaml"]
+    volumes:
+      - ./tempo/tempo.yaml:/etc/tempo/tempo.yaml:ro
+      - tempo_data:/var/tempo
+    ports:
+      - "3200:3200"
+    restart: unless-stopped
+
   grafana:
     image: grafana/grafana:latest
     environment:
@@ -49,3 +59,4 @@ volumes:
   prometheus_data:
   grafana_data:
   loki_data:
+  tempo_data:

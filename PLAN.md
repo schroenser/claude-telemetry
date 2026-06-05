@@ -453,4 +453,4 @@ docker compose up
 - [x] Step 2 — Metrics visible in Prometheus
 - [x] Step 3 — Grafana showing live metrics
 - [x] Step 4 — Log events queryable in Loki
-- [ ] Step 5 — Traces viewable in Tempo (beta)
+- [x] Step 5 — Traces viewable in Tempo (beta)
