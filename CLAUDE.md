@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 A Docker Compose observability stack that receives OpenTelemetry telemetry from Claude Code and surfaces it through Grafana (metrics via Prometheus, logs via Loki, traces via Tempo).
 
-See `PLAN.md` for the full step-by-step implementation plan including the architecture, the env vars needed on the host, and per-step test criteria.
+See `README.md` for the full architecture, service descriptions, and env vars needed on the host. The stack is fully implemented.
 
 ## Stack
 
@@ -40,7 +40,7 @@ grafana/provisioning/
 
 ## Connecting Claude Code
 
-Export these vars before running `claude` (see `PLAN.md` for the full list):
+Export these vars before running `claude` (see `README.md` for the full list including trace/beta flags):
 
 ```bash
 export CLAUDE_CODE_ENABLE_TELEMETRY=1
